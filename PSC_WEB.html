@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صفحة التواصل</title>
+
+<!-- رابط Font Awesome للأيقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pap5tcZecK5CkE7VvQJg1iEq6Z9D1UJ1GxLOQvS0M+5z0JH7Vjz9l0QYqojU6C2x/p2fqj9e3Lomz5ZXd+9iTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    /* الخطوط الأساسية */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background 0.3s, color 0.3s;
+        background: #f5f5f5;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    /* الوضع الداكن */
+    body.dark {
+        background: #121212;
+        color: #f5f5f5;
+    }
+
+    /* رأس الصفحة */
+    .header {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .header img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #FFD700; /* الذهبية */
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    .header img:hover {
+        transform: scale(1.05);
+    }
+
+    .header h1 {
+        margin: 15px 0 0 0;
+        font-size: 24px;
+    }
+
+    /* الأزرار */
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* المسافة بين الأيقونة والنص */
+        width: 250px;
+        margin: 15px 0;
+        padding: 15px;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        color: #fff;
+        background-color: #00bfff; /* أزرق سماوي */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        background-color: #009acd;
+        box-shadow: 0 0 15px 3px #FFD700; /* ظل ذهبي عند المرور */
+    }
+
+    /* الوضع الداكن للأزرار */
+    body.dark .btn {
+        background-color: #00bfff;
+        color: #fff;
+    }
+
+    body.dark .btn:hover {
+        background-color: #1e90ff;
+        box-shadow: 0 0 15px 3px #FFD700;
+    }
+
+    /* زر التبديل */
+    .toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        background: transparent;
+        border: 2px solid #FFD700;
+        border-radius: 5px;
+        color: inherit;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .toggle-btn:hover {
+        background: #FFD700;
+        color: #121212;
+    }
+
+    /* تصميم متجاوب */
+    @media (max-width: 500px) {
+        .btn {
+            width: 80%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- زر التبديل -->
+<button class="toggle-btn" onclick="toggleDark()">تبديل الوضع</button>
+
+<!-- رأس الصفحة -->
+<div class="header">
+    <img src="PSC_logo.jpg" alt="صورتك">
+    <h1>Political Science Club</h1>
+</div>
+
+<!-- روابط التواصل الاجتماعي مع أيقونات -->
+<a href="https://www.facebook.com/" class="btn" target="_blank">
+    <i class="fab fa-facebook-f"></i> فيسبوك
+</a>
+<a href="https://www.instagram.com/" class="btn" target="_blank">
+    <i class="fab fa-instagram"></i> إنستغرام
+</a>
+<a href="https://t.me/" class="btn" target="_blank">
+    <i class="fab fa-telegram-plane"></i> تلغرام
+</a>
+<a href="https://www.linkedin.com/" class="btn" target="_blank">
+    <i class="fab fa-linkedin-in"></i> لينكدإن
+</a>
+
+<script>
+    function toggleDark() {
+        document.body.classList.toggle('dark');
+    }
+</script>
+
+</body>
+</html>
